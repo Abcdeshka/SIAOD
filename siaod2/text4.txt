@@ -1,0 +1,11 @@
+stack=Stack()
+with open("text4.txt","r", encoding="utf-8") as f:
+    for line in f.readlines():
+        for letter in line:
+            if letter=="(":
+                stack.add("(")
+            elif letter==")":
+                if stack.isEmpty():
+                    print(False)
+                    break
+                stack.pop()

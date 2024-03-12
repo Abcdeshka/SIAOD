@@ -1,0 +1,14 @@
+deque=Deque()
+k=True
+with open("text5.txt","r", encoding="utf-8") as f:
+    for line in f.readlines():
+        for letter in line.strip():
+            if letter=="[":
+                deque.add_rear("[")
+            elif letter=="]":
+                if deque.isEmpty():
+                    k=False
+                    break
+                deque.pop_rear()
+
+print(k and deque.isEmpty())]
